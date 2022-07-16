@@ -100,7 +100,7 @@ flutter:
       fonts:
         - asset: fonts/NotoSans_SemiCondensed-Semibold.ttf
           weight: 600
-    - family: Catamaran
+    - family: Catamaran Bold
       fonts:
         - asset: fonts/Catamaran-Bold.ttf
           weight: 700
