@@ -24,6 +24,7 @@ class VocabListTile extends StatelessWidget {
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(30.0)),
           leading: icon,
+          style: ListTileStyle.drawer,
           title: Text(
             title,
             style: Theme.of(context).textTheme.labelLarge,
