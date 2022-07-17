@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:vocabulary/styles/colors.dart';
 
 class LevelDownsCard extends StatelessWidget {
   final int amount;
