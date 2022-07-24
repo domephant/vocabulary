@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:vocabulary/styles/colors.dart';
+import 'package:vocabulary/styles/custom_color.g.dart';
 
 class LevelUpsCard extends StatelessWidget {
   final int amount;
@@ -12,7 +12,7 @@ class LevelUpsCard extends StatelessWidget {
       child: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(30),
-          color: levelUpGreen,
+          color: CustomGreen,
         ),
         child: ListTile(
           leading: const Icon(
