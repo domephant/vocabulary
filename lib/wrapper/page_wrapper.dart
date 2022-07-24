@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:vocabulary/components/buttons/vocab_fab.dart';
+import 'package:vocabulary/components/buttons/vocab_dashboard_fab.dart';
 import 'package:vocabulary/components/navigation/vocab_appbar.dart';
 import 'package:vocabulary/components/navigation/vocab_drawer.dart';
 import 'package:vocabulary/providers/page_index_provider.dart';
@@ -130,7 +130,7 @@ class _PageWrapperState extends State<PageWrapper> {
         },
       ),
       floatingActionButton:
-          enableFAB ? const VocabFloatingActionButton() : null,
+          enableFAB ? const VocabDashboardFloatingActionButton() : null,
     );
   }
 }
