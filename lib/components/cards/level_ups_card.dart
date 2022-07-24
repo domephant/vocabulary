@@ -12,7 +12,8 @@ class LevelUpsCard extends StatelessWidget {
       child: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(30),
-          color: CustomGreen,
+          color:
+              Theme.of(context).extension<CustomColors>()!.CustomGreenContainer,
         ),
         child: ListTile(
           leading: const Icon(

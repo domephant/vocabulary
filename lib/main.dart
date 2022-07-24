@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:vocabulary/providers/page_index_provider.dart';
 import 'package:vocabulary/styles/color_schemes.g.dart';
+import 'package:vocabulary/styles/custom_color.g.dart';
 import 'package:vocabulary/wrapper/page_wrapper.dart';
 
 void main() {
@@ -22,6 +23,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         useMaterial3: true,
         colorScheme: lightColorScheme,
+        extensions: [lightCustomColors],
         textTheme: Theme.of(context).textTheme.copyWith(
               displaySmall: const TextStyle(
                 fontFamily: "Catamaran",
@@ -77,6 +79,7 @@ class MyApp extends StatelessWidget {
       darkTheme: ThemeData(
         useMaterial3: true,
         colorScheme: darkColorScheme,
+        extensions: [darkCustomColors],
         textTheme: Theme.of(context).textTheme.copyWith(
               displaySmall: const TextStyle(
                 fontFamily: "Catamaran",
