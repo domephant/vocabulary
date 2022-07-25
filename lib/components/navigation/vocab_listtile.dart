@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:vocabulary/styles/colors.dart';
 
 class VocabListTile extends StatelessWidget {
   const VocabListTile(
@@ -24,10 +23,14 @@ class VocabListTile extends StatelessWidget {
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(30.0)),
           leading: icon,
-          title: Text(title),
+          style: ListTileStyle.drawer,
+          title: Text(
+            title,
+            style: Theme.of(context).textTheme.labelLarge,
+          ),
           selected: enabled,
-          selectedColor: Colors.black,
-          selectedTileColor: primary60,
+          iconColor: Theme.of(context).colorScheme.onBackground,
+          selectedTileColor: Theme.of(context).colorScheme.surfaceVariant,
           onTap: onPressed),
     );
   }

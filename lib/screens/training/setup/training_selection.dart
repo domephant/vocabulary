@@ -18,55 +18,55 @@ class TrainingSelectionScreen extends StatelessWidget {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => TestResult0Screen(),
+                    builder: (context) => const TestResult0Screen(),
                   ));
             },
-            child: Text("0-24")),
+            child: const Text("0-24")),
         ElevatedButton(
             onPressed: () {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => TestResult25Screen(),
+                    builder: (context) => const TestResult25Screen(),
                   ));
             },
-            child: Text("25-49")),
+            child: const Text("25-49")),
         ElevatedButton(
             onPressed: () {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => TestResult50Screen(),
+                    builder: (context) => const TestResult50Screen(),
                   ));
             },
-            child: Text("50-74")),
+            child: const Text("50-74")),
         ElevatedButton(
             onPressed: () {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => TestResult75Screen(),
+                    builder: (context) => const TestResult75Screen(),
                   ));
             },
-            child: Text("75-89")),
+            child: const Text("75-89")),
         ElevatedButton(
             onPressed: () {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => TestResult90Screen(),
+                    builder: (context) => const TestResult90Screen(),
                   ));
             },
-            child: Text("90-99")),
+            child: const Text("90-99")),
         ElevatedButton(
             onPressed: () {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => TestResult100Screen(),
+                    builder: (context) => const TestResult100Screen(),
                   ));
             },
-            child: Text("100"))
+            child: const Text("100"))
       ],
     );
   }

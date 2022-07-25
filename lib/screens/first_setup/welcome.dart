@@ -16,7 +16,10 @@ class WelcomeScreen extends StatelessWidget {
           mainAxisSize: MainAxisSize.max,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            const Text("Welcome"),
+            Text(
+              "Welcome",
+              style: TextStyle(color: Theme.of(context).colorScheme.secondary),
+            ),
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.4,
               child: Lottie.asset(
