@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:vocabulary/providers/page_index_provider.dart';
+import 'package:vocabulary/screens/first_setup/welcome.dart';
 import 'package:vocabulary/styles/color_schemes.g.dart';
 import 'package:vocabulary/styles/custom_color.g.dart';
 import 'package:vocabulary/wrapper/page_wrapper.dart';
@@ -75,6 +76,7 @@ class MyApp extends StatelessWidget {
                 //height: 16,
               ),
             ),
+        scaffoldBackgroundColor: const Color(0xFFFFFBFF),
       ),
       darkTheme: ThemeData(
         useMaterial3: true,
@@ -132,7 +134,7 @@ class MyApp extends StatelessWidget {
               ),
             ),
       ),
-      home: const PageWrapper(),
+      home: const WelcomeScreen(),
     );
   }
 }

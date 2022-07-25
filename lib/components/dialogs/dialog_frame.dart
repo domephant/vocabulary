@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 class DialogFrame extends StatelessWidget {
   final Widget? child;
   final Widget? title;
-  const DialogFrame({Key? key, this.child, this.title}) : super(key: key);
+  final Color? buttonTextColor;
+  const DialogFrame({Key? key, this.child, this.title, this.buttonTextColor})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -14,17 +16,29 @@ class DialogFrame extends StatelessWidget {
         alignment: Alignment.center,
       ),
       backgroundColor: Colors.white,
-      content: SizedBox(
-          height: MediaQuery.of(context).size.height * 0.6,
-          width: MediaQuery.of(context).size.width * 0.8,
-          child: child),
+      content: SizedBox.expand(
+        child: FractionallySizedBox(widthFactor: 0.8, child: child),
+      ),
       actions: <Widget>[
         TextButton(
             onPressed: () {
               Navigator.pop(context);
             },
-            child: const Text("Cancel")),
-        TextButton(onPressed: () {}, child: const Text("Ok")),
+            child: Text(
+              "Cancel",
+              style: TextStyle(
+                  color: buttonTextColor ??
+                      Theme.of(context).colorScheme.onBackground),
+            )),
+        TextButton(
+          onPressed: () {},
+          child: Text(
+            "Ok",
+            style: TextStyle(
+                color: buttonTextColor ??
+                    Theme.of(context).colorScheme.onBackground),
+          ),
+        ),
       ],
     );
   }

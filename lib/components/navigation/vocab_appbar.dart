@@ -12,9 +12,8 @@ class VocabAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      backgroundColor: Colors.white,
-      surfaceTintColor: Colors.white,
       toolbarHeight: AppBar().preferredSize.height * 1.25,
+      elevation: 0,
       leading: IconButton(
         onPressed: () {
           Scaffold.of(context).openDrawer();
