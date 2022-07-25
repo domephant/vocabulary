@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vocabulary/styles/additional_fonts.dart';
 
 class LevelDownsCard extends StatelessWidget {
   final int amount;
@@ -19,7 +20,8 @@ class LevelDownsCard extends StatelessWidget {
         title: const Text("Level Downs"),
         trailing: Text(
           amount.toString(),
-          style: TextStyle(color: Theme.of(context).colorScheme.error),
+          style: AdditionalFonts.pointsSmall
+              .copyWith(color: Theme.of(context).colorScheme.error),
         ),
       ),
     );

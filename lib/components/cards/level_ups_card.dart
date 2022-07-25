@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vocabulary/styles/additional_fonts.dart';
 import 'package:vocabulary/styles/custom_color.g.dart';
 
 class LevelUpsCard extends StatelessWidget {
@@ -22,7 +23,7 @@ class LevelUpsCard extends StatelessWidget {
         ),
         title: const Text("Level Ups"),
         trailing: Text(amount.toString(),
-            style: TextStyle(
+            style: AdditionalFonts.pointsSmall.copyWith(
                 color: Theme.of(context)
                     .extension<CustomColors>()!
                     .onCustomGreenContainer)),

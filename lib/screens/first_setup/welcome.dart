@@ -18,7 +18,10 @@ class WelcomeScreen extends StatelessWidget {
           children: [
             Text(
               "Welcome",
-              style: TextStyle(color: Theme.of(context).colorScheme.secondary),
+              style: Theme.of(context)
+                  .textTheme
+                  .headlineMedium!
+                  .copyWith(color: Theme.of(context).colorScheme.secondary),
             ),
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.4,
