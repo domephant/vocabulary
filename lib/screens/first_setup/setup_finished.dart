@@ -18,8 +18,12 @@ class VocabSetupFinishedScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Column(
-              children: const [
-                Text("We are ready to go!"),
+              children: [
+                Text(
+                  "We are ready to go!",
+                  style:
+                      TextStyle(color: Theme.of(context).colorScheme.primary),
+                ),
               ],
             ),
             SizedBox(
@@ -44,6 +48,12 @@ class VocabSetupFinishedScreen extends StatelessWidget {
                         type: PageTransitionType.fade),
                     (Route<dynamic> route) => false);
               },
+              style: ButtonStyle(
+                backgroundColor: MaterialStateProperty.all(
+                    Theme.of(context).colorScheme.primary),
+                foregroundColor: MaterialStateProperty.all(
+                    Theme.of(context).colorScheme.onPrimary),
+              ),
             )
           ],
         ),

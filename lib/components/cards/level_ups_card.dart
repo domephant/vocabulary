@@ -16,12 +16,18 @@ class LevelUpsCard extends StatelessWidget {
               Theme.of(context).extension<CustomColors>()!.CustomGreenContainer,
         ),
         child: ListTile(
-          leading: const Icon(
+          leading: Icon(
             Icons.north_east,
-            color: Colors.black,
+            color: Theme.of(context)
+                .extension<CustomColors>()!
+                .onCustomGreenContainer,
           ),
           title: const Text("Level Ups"),
-          trailing: Text(amount.toString()),
+          trailing: Text(amount.toString(),
+              style: TextStyle(
+                  color: Theme.of(context)
+                      .extension<CustomColors>()!
+                      .onCustomGreenContainer)),
         ),
       ),
     );

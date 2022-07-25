@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class VocabCheckBox extends StatefulWidget {
-  final Text title;
+  final String title;
   const VocabCheckBox({
     Key? key,
     required this.title,
@@ -18,7 +18,16 @@ class _VocabCheckBoxState extends State<VocabCheckBox> {
     return CheckboxListTile(
         controlAffinity: ListTileControlAffinity.leading,
         value: ticked,
-        title: widget.title,
+        title: Text(
+          widget.title,
+          style: TextStyle(
+              color: ticked
+                  ? Theme.of(context).colorScheme.tertiary
+                  : Theme.of(context).colorScheme.onBackground),
+        ),
+        activeColor: Theme.of(context).colorScheme.tertiary,
+        checkboxShape:
+            RoundedRectangleBorder(borderRadius: BorderRadius.circular(2)),
         onChanged: (value) {
           setState(() {
             ticked = !ticked;

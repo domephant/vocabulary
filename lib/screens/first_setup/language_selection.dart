@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:page_transition/page_transition.dart';
@@ -18,9 +20,12 @@ class LanguageSelectionScreen extends StatelessWidget {
           mainAxisSize: MainAxisSize.max,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Column(children: const [
-              Text("Select your languages"),
-              Text("Don't worry. You can change it later."),
+            Column(children: [
+              Text(
+                "Select your languages",
+                style: TextStyle(color: Theme.of(context).colorScheme.tertiary),
+              ),
+              const Text("Don't worry. You can change it later."),
             ]),
             Lottie.asset('images/lotties/setup/lottie_setupscreen_02.json',
                 fit: BoxFit.fitWidth,
@@ -30,36 +35,43 @@ class LanguageSelectionScreen extends StatelessWidget {
             Column(
               children: const [
                 VocabCheckBox(
-                  title: Text("German"),
+                  title: "German",
                 ),
                 VocabCheckBox(
-                  title: Text("English"),
+                  title: "English",
                 ),
                 VocabCheckBox(
-                  title: Text("French"),
+                  title: "French",
                 ),
                 VocabCheckBox(
-                  title: Text("Japanese"),
+                  title: "Japanese",
                 ),
                 VocabCheckBox(
-                  title: Text("Korean"),
+                  title: "Korean",
                 ),
                 VocabCheckBox(
-                  title: Text("Giraffe"),
+                  title: "Giraffe",
                 ),
               ],
             ),
             VocabFirstSetupButton(
-                title: const Text("Next"),
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    PageTransition(
-                        child: const VocabSetupFinishedScreen(),
-                        type: PageTransitionType.rightToLeftWithFade,
-                        duration: const Duration(milliseconds: 250)),
-                  );
-                })
+              title: const Text("Next"),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  PageTransition(
+                      child: const VocabSetupFinishedScreen(),
+                      type: PageTransitionType.rightToLeftWithFade,
+                      duration: const Duration(milliseconds: 250)),
+                );
+              },
+              style: ButtonStyle(
+                backgroundColor: MaterialStateProperty.all(
+                    Theme.of(context).colorScheme.tertiary),
+                foregroundColor: MaterialStateProperty.all(
+                    Theme.of(context).colorScheme.onPrimary),
+              ),
+            )
           ],
         ),
       ),

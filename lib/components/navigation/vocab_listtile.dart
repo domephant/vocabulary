@@ -29,7 +29,8 @@ class VocabListTile extends StatelessWidget {
             style: Theme.of(context).textTheme.labelLarge,
           ),
           selected: enabled,
-          selectedColor: Colors.black,
+          iconColor: Theme.of(context).colorScheme.onBackground,
+          selectedTileColor: Theme.of(context).colorScheme.surfaceVariant,
           onTap: onPressed),
     );
   }
