@@ -52,7 +52,7 @@ class TestResult0Screen extends StatelessWidget {
                             children: [
                               Text(
                                 " 0 ",
-                                style: AdditionalFonts().points.copyWith(
+                                style: AdditionalFonts.points.copyWith(
                                     color: Theme.of(context)
                                         .colorScheme
                                         .secondary),
