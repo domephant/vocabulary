@@ -15,9 +15,12 @@ class TestResult0Screen extends StatelessWidget {
           body: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Text(
-                "Your Result",
-                style: TextStyle(color: Theme.of(context).colorScheme.tertiary),
+              Flexible(
+                child: Text(
+                  "Your Result",
+                  style:
+                      TextStyle(color: Theme.of(context).colorScheme.tertiary),
+                ),
               ),
               SizedBox(
                 width: constraints.maxWidth,
@@ -53,14 +56,60 @@ class TestResult0Screen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                 ),
               ),
-              const LevelUpsCard(
-                amount: 0,
-              ),
-              SizedBox(
-                height: constraints.maxHeight * 0.01,
-              ),
-              const LevelDownsCard(
-                amount: 100,
+              FractionallySizedBox(
+                widthFactor: 0.85,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    const LevelUpsCard(
+                      amount: 0,
+                    ),
+                    SizedBox(
+                      height: constraints.maxHeight * 0.01,
+                    ),
+                    const LevelDownsCard(
+                      amount: 100,
+                    ),
+                    SizedBox(
+                        height: MediaQuery.of(context).size.height * 0.075),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        ElevatedButton.icon(
+                          onPressed: () {},
+                          icon: Icon(Icons.replay_rounded,
+                              color: Theme.of(context)
+                                  .colorScheme
+                                  .onTertiaryContainer),
+                          label: Text(
+                            "Retry",
+                            style: TextStyle(
+                                color: Theme.of(context)
+                                    .colorScheme
+                                    .onTertiaryContainer),
+                          ),
+                          style: ButtonStyle(
+                              backgroundColor: MaterialStateProperty.all(
+                                  Theme.of(context)
+                                      .colorScheme
+                                      .tertiaryContainer)),
+                        ),
+                        ElevatedButton(
+                          onPressed: () {},
+                          child: Text(
+                            "Continue",
+                            style: TextStyle(
+                                color: Theme.of(context).colorScheme.onPrimary),
+                          ),
+                          style: ButtonStyle(
+                            backgroundColor: MaterialStateProperty.all(
+                                Theme.of(context).colorScheme.tertiary),
+                          ),
+                        )
+                      ],
+                    )
+                  ],
+                ),
               ),
             ],
           ),
