@@ -23,7 +23,7 @@ class LevelUpsCard extends StatelessWidget {
         ),
         title: const Text("Level Ups"),
         trailing: Text(amount.toString(),
-            style: AdditionalFonts().pointsSmall.copyWith(
+            style: AdditionalFonts.pointsSmall.copyWith(
                 color: Theme.of(context)
                     .extension<CustomColors>()!
                     .onCustomGreenContainer)),

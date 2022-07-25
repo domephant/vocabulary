@@ -20,8 +20,7 @@ class LevelDownsCard extends StatelessWidget {
         title: const Text("Level Downs"),
         trailing: Text(
           amount.toString(),
-          style: AdditionalFonts()
-              .pointsSmall
+          style: AdditionalFonts.pointsSmall
               .copyWith(color: Theme.of(context).colorScheme.error),
         ),
       ),

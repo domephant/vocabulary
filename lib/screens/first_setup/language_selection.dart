@@ -28,7 +28,8 @@ class LanguageSelectionScreen extends StatelessWidget {
                     .headlineMedium!
                     .copyWith(color: Theme.of(context).colorScheme.tertiary),
               ),
-              const Text("Don't worry. You can change it later."),
+              Text("Don't worry. You can change it later.",
+                  style: Theme.of(context).textTheme.bodyMedium),
             ]),
             Lottie.asset('images/lotties/setup/lottie_setupscreen_02.json',
                 fit: BoxFit.fitWidth,
