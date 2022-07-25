@@ -21,8 +21,10 @@ class VocabSetupFinishedScreen extends StatelessWidget {
               children: [
                 Text(
                   "We are ready to go!",
-                  style:
-                      TextStyle(color: Theme.of(context).colorScheme.primary),
+                  style: Theme.of(context)
+                      .textTheme
+                      .headlineMedium!
+                      .copyWith(color: Theme.of(context).colorScheme.primary),
                 ),
               ],
             ),

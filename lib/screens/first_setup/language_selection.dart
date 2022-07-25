@@ -23,7 +23,10 @@ class LanguageSelectionScreen extends StatelessWidget {
             Column(children: [
               Text(
                 "Select your languages",
-                style: TextStyle(color: Theme.of(context).colorScheme.tertiary),
+                style: Theme.of(context)
+                    .textTheme
+                    .headlineMedium!
+                    .copyWith(color: Theme.of(context).colorScheme.tertiary),
               ),
               const Text("Don't worry. You can change it later."),
             ]),
