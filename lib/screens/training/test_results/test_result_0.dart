@@ -80,19 +80,19 @@ class TestResult0Screen extends StatelessWidget {
                           icon: Icon(Icons.replay_rounded,
                               color: Theme.of(context)
                                   .colorScheme
-                                  .onTertiaryContainer),
+                                  .onSecondaryContainer),
                           label: Text(
                             "Retry",
                             style: TextStyle(
                                 color: Theme.of(context)
                                     .colorScheme
-                                    .onTertiaryContainer),
+                                    .onSecondaryContainer),
                           ),
                           style: ButtonStyle(
                               backgroundColor: MaterialStateProperty.all(
                                   Theme.of(context)
                                       .colorScheme
-                                      .tertiaryContainer)),
+                                      .secondaryContainer)),
                         ),
                         ElevatedButton(
                           onPressed: () {},
@@ -103,7 +103,7 @@ class TestResult0Screen extends StatelessWidget {
                           ),
                           style: ButtonStyle(
                             backgroundColor: MaterialStateProperty.all(
-                                Theme.of(context).colorScheme.tertiary),
+                                Theme.of(context).colorScheme.secondary),
                           ),
                         )
                       ],
