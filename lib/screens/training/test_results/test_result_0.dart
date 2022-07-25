@@ -77,12 +77,34 @@ class TestResult0Screen extends StatelessWidget {
                       children: [
                         ElevatedButton.icon(
                           onPressed: () {},
-                          icon: const Icon(Icons.replay_rounded),
-                          label: const Text("Retry"),
+                          icon: Icon(Icons.replay_rounded,
+                              color: Theme.of(context)
+                                  .colorScheme
+                                  .onTertiaryContainer),
+                          label: Text(
+                            "Retry",
+                            style: TextStyle(
+                                color: Theme.of(context)
+                                    .colorScheme
+                                    .onTertiaryContainer),
+                          ),
+                          style: ButtonStyle(
+                              backgroundColor: MaterialStateProperty.all(
+                                  Theme.of(context)
+                                      .colorScheme
+                                      .tertiaryContainer)),
                         ),
                         ElevatedButton(
                           onPressed: () {},
-                          child: const Text("Continue"),
+                          child: Text(
+                            "Continue",
+                            style: TextStyle(
+                                color: Theme.of(context).colorScheme.onPrimary),
+                          ),
+                          style: ButtonStyle(
+                            backgroundColor: MaterialStateProperty.all(
+                                Theme.of(context).colorScheme.tertiary),
+                          ),
                         )
                       ],
                     )
