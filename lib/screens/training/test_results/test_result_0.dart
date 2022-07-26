@@ -154,6 +154,7 @@ class TestResult0Screen extends StatelessWidget {
                     fit: BoxFit.fitWidth,
                     width: constraints.maxWidth,
                     repeat: false,
+                    frameRate: FrameRate.max,
                   ),
                 ),
               ),
