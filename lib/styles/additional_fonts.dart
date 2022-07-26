@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class AdditionalFonts {
   static TextStyle get points => const TextStyle(
         fontFamily: "Noto Sans",
-        fontSize: 28,
+        fontSize: 36,
         fontWeight: FontWeight.w800,
         //height: 36,
       );
