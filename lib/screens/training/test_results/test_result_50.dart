@@ -58,7 +58,7 @@ class TestResult50Screen extends StatelessWidget {
                               child: Row(
                                 children: [
                                   Text(
-                                    " 0 ",
+                                    " 50 ",
                                     style: AdditionalFonts.points.copyWith(
                                         color: Theme.of(context)
                                             .colorScheme

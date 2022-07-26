@@ -58,7 +58,7 @@ class TestResult90Screen extends StatelessWidget {
                               child: Row(
                                 children: [
                                   Text(
-                                    " 0 ",
+                                    " 90 ",
                                     style: AdditionalFonts.points.copyWith(
                                         color: Theme.of(context)
                                             .colorScheme
