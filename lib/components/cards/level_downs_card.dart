@@ -17,7 +17,12 @@ class LevelDownsCard extends StatelessWidget {
           Icons.south_east,
           color: Theme.of(context).colorScheme.error,
         ),
-        title: const Text("Level Downs"),
+        title: Text(
+          "Level Downs",
+          style: TextStyle(
+            color: Theme.of(context).colorScheme.error,
+          ),
+        ),
         trailing: Text(
           amount.toString(),
           style: AdditionalFonts.pointsSmall
