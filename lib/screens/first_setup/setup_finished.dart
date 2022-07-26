@@ -34,6 +34,7 @@ class VocabSetupFinishedScreen extends StatelessWidget {
                 'images/lotties/setup/lottie_setupscreen_final.json',
                 fit: BoxFit.fitWidth,
                 repeat: false,
+                frameRate: FrameRate.max,
               ),
             ),
             SizedBox(

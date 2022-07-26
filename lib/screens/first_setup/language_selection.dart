@@ -31,11 +31,14 @@ class LanguageSelectionScreen extends StatelessWidget {
               Text("Don't worry. You can change it later.",
                   style: Theme.of(context).textTheme.bodyMedium),
             ]),
-            Lottie.asset('images/lotties/setup/lottie_setupscreen_02.json',
-                fit: BoxFit.fitWidth,
-                repeat: false,
-                alignment: Alignment.centerRight,
-                height: MediaQuery.of(context).size.height * 0.25),
+            Lottie.asset(
+              'images/lotties/setup/lottie_setupscreen_02.json',
+              fit: BoxFit.fitWidth,
+              repeat: false,
+              alignment: Alignment.centerRight,
+              height: MediaQuery.of(context).size.height * 0.25,
+              frameRate: FrameRate.max,
+            ),
             Column(
               children: const [
                 VocabCheckBox(

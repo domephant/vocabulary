@@ -29,6 +29,7 @@ class WelcomeScreen extends StatelessWidget {
                 'images/lotties/setup/lottie_setupscreen_01.json',
                 fit: BoxFit.fitWidth,
                 repeat: false,
+                frameRate: FrameRate.max,
               ),
             ),
             Padding(
