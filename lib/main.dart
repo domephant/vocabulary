@@ -1,5 +1,3 @@
-import 'dart:js';
-
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -10,8 +8,6 @@ import 'package:vocabulary/screens/first_setup/welcome.dart';
 import 'package:vocabulary/services/authentication_service.dart';
 import 'package:vocabulary/styles/color_schemes.g.dart';
 import 'package:vocabulary/styles/custom_color.g.dart';
-import 'package:vocabulary/wrapper/authentication_wrapper.dart';
-import 'package:vocabulary/wrapper/page_wrapper.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
