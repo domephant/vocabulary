@@ -1,11 +1,16 @@
+import 'dart:js';
+
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:vocabulary/firebase_options.dart';
 import 'package:vocabulary/providers/page_index_provider.dart';
 import 'package:vocabulary/screens/first_setup/welcome.dart';
+import 'package:vocabulary/services/authentication_service.dart';
 import 'package:vocabulary/styles/color_schemes.g.dart';
 import 'package:vocabulary/styles/custom_color.g.dart';
+import 'package:vocabulary/wrapper/authentication_wrapper.dart';
 import 'package:vocabulary/wrapper/page_wrapper.dart';
 
 Future<void> main() async {
@@ -13,10 +18,23 @@ Future<void> main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  runApp(ChangeNotifierProvider(
-    create: (context) => PageIndex(),
-    child: const MyApp(),
-  ));
+  runApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(
+          create: (context) => PageIndex(),
+        ),
+        Provider<AuthenticationService>(
+          create: (_) => AuthenticationService(FirebaseAuth.instance),
+        ),
+        StreamProvider(
+            create: (context) =>
+                context.read<AuthenticationService>().authStateChanges,
+            initialData: null)
+      ],
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {

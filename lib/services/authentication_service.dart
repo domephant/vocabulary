@@ -8,25 +8,20 @@ class AuthenticationService {
 
   GoogleSignInAccount? user;
 
-  Stream<User?> get authStateChanges => _firebaseAuth.authStateChanges();
+  Stream<User?> get authStateChanges => _firebaseAuth.idTokenChanges();
 
   Future<bool> signInWithGoogle() async {
     try {
-      // Trigger the authentication flow
       user = await GoogleSignIn().signIn();
 
-      // Obtain the auth details from the request
       final GoogleSignInAuthentication googleAuth = await user!.authentication;
 
-      // Create a new credential
       final credential = GoogleAuthProvider.credential(
         accessToken: googleAuth.accessToken,
         idToken: googleAuth.idToken,
       );
 
-      // Once signed in, return the UserCredential
       await FirebaseAuth.instance.signInWithCredential(credential);
-      print(user);
       return true;
     } on FirebaseAuthException catch (e) {
       print(e.message);
