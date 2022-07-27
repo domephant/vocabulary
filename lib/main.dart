@@ -1,12 +1,18 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:vocabulary/firebase_options.dart';
 import 'package:vocabulary/providers/page_index_provider.dart';
 import 'package:vocabulary/screens/first_setup/welcome.dart';
 import 'package:vocabulary/styles/color_schemes.g.dart';
 import 'package:vocabulary/styles/custom_color.g.dart';
 import 'package:vocabulary/wrapper/page_wrapper.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(ChangeNotifierProvider(
     create: (context) => PageIndex(),
     child: const MyApp(),
