@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:vocabulary/styles/additional_fonts.dart';
 import 'package:vocabulary/styles/custom_color.g.dart';
