@@ -14,11 +14,27 @@
       },
       "oauth_client": [
         {
+          "client_id": "724369051483-iua114fh54g3eg5e0ngr14d5k2t9khbk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "de.vocabulary.vocabulary",
+            "certificate_hash": "bf1c572432d5207acbe02c0ea2804f85b035c657"
+          }
+        },
+        {
           "client_id": "724369051483-sevtcoe1qn2m4aonpp7q9f1b6aaiotqm.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "de.vocabulary.vocabulary",
             "certificate_hash": "106900b3ab68705a6688c571b58406b901fa9002"
+          }
+        },
+        {
+          "client_id": "724369051483-v8vfvrdco7of6timbs1dk7su7654u1m9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "de.vocabulary.vocabulary",
+            "certificate_hash": "97d201e16c1e2a898d3b92d4c91a2329cf5a0ef6"
           }
         },
         {
