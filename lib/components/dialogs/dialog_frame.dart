@@ -15,7 +15,7 @@ class DialogFrame extends StatelessWidget {
       ),
       backgroundColor: Theme.of(context).colorScheme.background,
       content: child,
-      contentPadding: const EdgeInsets.fromLTRB(24, 10, 24, 24),
+      contentPadding: const EdgeInsets.fromLTRB(24, 16, 24, 24),
       actions: <Widget>[
         TextButton(
             onPressed: () {
