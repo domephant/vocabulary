@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:vocabulary/styles/custom_color.g.dart';
 
-class VocabDashboardVocabularyButton extends StatelessWidget {
-  const VocabDashboardVocabularyButton({Key? key}) : super(key: key);
+class VocabDashboardTrainingButton extends StatelessWidget {
+  const VocabDashboardTrainingButton({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

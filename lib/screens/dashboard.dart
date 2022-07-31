@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:vocabulary/components/buttons/dashboard/vocab_dashboard_training_button.dart';
 import 'package:vocabulary/components/buttons/dashboard/vocab_dashboard_vocabulary_button.dart';
-import 'package:vocabulary/styles/custom_color.g.dart';
 
 class DashboardScreen extends StatelessWidget {
   const DashboardScreen({Key? key}) : super(key: key);
@@ -35,7 +34,7 @@ class DashboardScreen extends StatelessWidget {
               SizedBox(
                 height: size.height * 0.25,
               ),
-              const VocabDashboardVocabularyButton()
+              const VocabDashboardTrainingButton()
             ],
           ),
         ),
