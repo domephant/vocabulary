@@ -14,8 +14,8 @@ class VocabDashboardTrainingButton extends StatelessWidget {
         alignment: Alignment.center,
         children: [
           SvgPicture.asset(
-            'images/dashboard/vocabulary-btn.svg',
-            color: CustomGreen,
+            'images/dashboard/test-btn.svg',
+            color: CustomBlue,
             width: size.width * 0.65,
           ),
           Column(
