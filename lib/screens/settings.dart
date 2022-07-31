@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:vocabulary/components/dialogs/dialog_frame.dart';
+import 'package:vocabulary/components/dialogs/edit_tags.dart';
 import 'package:vocabulary/models/enums/languages.dart';
 
 class SettingsScreen extends StatefulWidget {
@@ -121,7 +122,12 @@ class _SettingsScreenState extends State<SettingsScreen> {
           value: appSoundEffectsValue,
         ),
         const Divider(thickness: 1),
-        const Text("Your tags")
+        const Text("Your tags"),
+        TextButton(
+            onPressed: () {
+              showDialog(context: context, builder: (_) => EditTagsDialog());
+            },
+            child: Text("Test"))
       ],
     );
   }
