@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class VocabDashboardTrainingButton extends StatelessWidget {
+class VocabDashboardRankingsButton extends StatelessWidget {
   final double width;
-  const VocabDashboardTrainingButton({Key? key, required this.width})
+
+  const VocabDashboardRankingsButton({Key? key, required this.width})
       : super(key: key);
 
   @override
@@ -13,8 +14,8 @@ class VocabDashboardTrainingButton extends StatelessWidget {
         alignment: Alignment.center,
         children: [
           SvgPicture.asset(
-            'images/dashboard/training-btn.svg',
-            color: Theme.of(context).colorScheme.secondaryContainer,
+            'images/dashboard/ranking-btn.svg',
+            color: Theme.of(context).colorScheme.surfaceVariant,
             width: width,
           ),
           Column(
@@ -22,12 +23,16 @@ class VocabDashboardTrainingButton extends StatelessWidget {
               const Padding(
                 padding: EdgeInsets.only(bottom: 8.0),
                 child: Icon(
-                  Icons.school,
+                  Icons.trending_up,
                   size: 40,
                 ),
               ),
               Text(
-                "Start your training",
+                "You are currently",
+                style: Theme.of(context).textTheme.labelLarge,
+              ),
+              Text(
+                "ranked Place 4",
                 style: Theme.of(context).textTheme.labelLarge,
               ),
             ],

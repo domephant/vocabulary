@@ -1,22 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:vocabulary/styles/custom_color.g.dart';
 
 class VocabDashboardVocabularyButton extends StatelessWidget {
-  const VocabDashboardVocabularyButton({Key? key}) : super(key: key);
+  final double width;
+  const VocabDashboardVocabularyButton({Key? key, required this.width})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final Size size = MediaQuery.of(context).size;
-
-    return SizedBox.fromSize(
+    return SizedBox(
       child: Stack(
         alignment: Alignment.center,
         children: [
           SvgPicture.asset(
             'images/dashboard/vocabulary-btn.svg',
-            color: CustomGreen,
-            width: size.width * 0.65,
+            color: Theme.of(context).colorScheme.tertiaryContainer,
+            width: width,
           ),
           Column(
             children: [
@@ -24,7 +23,7 @@ class VocabDashboardVocabularyButton extends StatelessWidget {
                 padding: EdgeInsets.only(bottom: 8.0),
                 child: Icon(
                   Icons.translate,
-                  size: 48,
+                  size: 40,
                 ),
               ),
               Text(

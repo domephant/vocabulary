@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class VocabDashboardTrainingButton extends StatelessWidget {
+class VocabDashboardAwardsButton extends StatelessWidget {
   final double width;
-  const VocabDashboardTrainingButton({Key? key, required this.width})
+  const VocabDashboardAwardsButton({Key? key, required this.width})
       : super(key: key);
 
   @override
@@ -13,8 +13,8 @@ class VocabDashboardTrainingButton extends StatelessWidget {
         alignment: Alignment.center,
         children: [
           SvgPicture.asset(
-            'images/dashboard/training-btn.svg',
-            color: Theme.of(context).colorScheme.secondaryContainer,
+            'images/dashboard/awards-btn.svg',
+            color: Theme.of(context).colorScheme.primaryContainer,
             width: width,
           ),
           Column(
@@ -22,12 +22,16 @@ class VocabDashboardTrainingButton extends StatelessWidget {
               const Padding(
                 padding: EdgeInsets.only(bottom: 8.0),
                 child: Icon(
-                  Icons.school,
+                  Icons.emoji_events,
                   size: 40,
                 ),
               ),
               Text(
-                "Start your training",
+                "Better than",
+                style: Theme.of(context).textTheme.labelLarge,
+              ),
+              Text(
+                "Google Translate",
                 style: Theme.of(context).textTheme.labelLarge,
               ),
             ],
