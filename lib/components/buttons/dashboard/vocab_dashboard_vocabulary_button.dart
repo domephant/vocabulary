@@ -36,6 +36,11 @@ class VocabDashboardVocabularyButton extends StatelessWidget {
               ),
             ],
           ),
+          Positioned.fill(
+              child: Material(
+            color: Colors.transparent,
+            child: InkWell(onTap: () {}),
+          )),
         ],
       ),
     );
