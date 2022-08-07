@@ -4,6 +4,7 @@ class Vocabulary {
   String language;
   List<String> tags;
   String additionalInformation;
+  int level;
 
   Vocabulary(
     this.nativeLanguageMeanings,
@@ -11,5 +12,11 @@ class Vocabulary {
     this.language,
     this.tags,
     this.additionalInformation,
+    this.level,
   );
+
+  @override
+  String toString() {
+    return "Vocabulary(nativeLanguageMeanings: ${nativeLanguageMeanings.toString()}, newLanguageMeanings: ${newLanguageMeanings.toString()}, language: ${language.toString()}, tags: ${tags.toString()}, additionalInformation: ${additionalInformation.toString()}, level: ${level.toString()})";
+  }
 }
