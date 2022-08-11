@@ -50,7 +50,7 @@ class DashboardScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 SizedBox(
-                  height: constraints.maxHeight * 0.65,
+                  height: constraints.maxHeight * 0.675,
                 ),
                 VocabDashboardRankingsButton(
                   width: (constraints.maxWidth * 0.75),
@@ -65,7 +65,7 @@ class DashboardScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 SizedBox(
-                  height: constraints.maxHeight * 0.4125,
+                  height: constraints.maxHeight * 0.425,
                 ),
                 VocabDashboardAwardsButton(
                   width: (constraints.maxWidth * 0.6),

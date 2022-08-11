@@ -8,40 +8,43 @@ class VocabDashboardAwardsButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      child: Stack(
-        alignment: Alignment.center,
-        children: [
-          SvgPicture.asset(
-            'images/dashboard/awards-btn.svg',
-            color: Theme.of(context).colorScheme.primaryContainer,
-            width: width,
-          ),
-          Column(
-            children: [
-              const Padding(
-                padding: EdgeInsets.only(bottom: 8.0),
-                child: Icon(
-                  Icons.emoji_events,
-                  size: 40,
+    return GestureDetector(
+      onTap: () => {},
+      child: SizedBox(
+        child: Stack(
+          alignment: Alignment.center,
+          children: [
+            SvgPicture.asset(
+              'images/dashboard/awards-btn.svg',
+              color: Theme.of(context).colorScheme.primaryContainer,
+              width: width,
+            ),
+            Column(
+              children: [
+                const Padding(
+                  padding: EdgeInsets.only(bottom: 8.0),
+                  child: Icon(
+                    Icons.emoji_events,
+                    size: 40,
+                  ),
                 ),
-              ),
-              Text(
-                "Better than",
-                style: Theme.of(context).textTheme.labelLarge,
-              ),
-              Text(
-                "Google Translate",
-                style: Theme.of(context).textTheme.labelLarge,
-              ),
-            ],
-          ),
-          Positioned.fill(
-              child: Material(
-            color: Colors.transparent,
-            child: InkWell(onTap: () {}),
-          )),
-        ],
+                Text(
+                  "Better than",
+                  style: Theme.of(context).textTheme.labelLarge,
+                ),
+                Text(
+                  "Google Translate",
+                  style: Theme.of(context).textTheme.labelLarge,
+                ),
+              ],
+            ),
+            /*Positioned.fill(
+                child: Material(
+              color: Colors.transparent,
+              child: InkWell(onTap: () {}),
+            )),*/
+          ],
+        ),
       ),
     );
   }

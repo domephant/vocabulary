@@ -9,40 +9,43 @@ class VocabDashboardRankingsButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      child: Stack(
-        alignment: Alignment.center,
-        children: [
-          SvgPicture.asset(
-            'images/dashboard/ranking-btn.svg',
-            color: Theme.of(context).colorScheme.surfaceVariant,
-            width: width,
-          ),
-          Column(
-            children: [
-              const Padding(
-                padding: EdgeInsets.only(bottom: 8.0),
-                child: Icon(
-                  Icons.trending_up,
-                  size: 40,
+    return GestureDetector(
+      onTap: () => {},
+      child: SizedBox(
+        child: Stack(
+          alignment: Alignment.center,
+          children: [
+            SvgPicture.asset(
+              'images/dashboard/ranking-btn.svg',
+              color: Theme.of(context).colorScheme.surfaceVariant,
+              width: width,
+            ),
+            Column(
+              children: [
+                const Padding(
+                  padding: EdgeInsets.only(bottom: 8.0),
+                  child: Icon(
+                    Icons.trending_up,
+                    size: 40,
+                  ),
                 ),
-              ),
-              Text(
-                "You are currently",
-                style: Theme.of(context).textTheme.labelLarge,
-              ),
-              Text(
-                "ranked Place 4",
-                style: Theme.of(context).textTheme.labelLarge,
-              ),
-            ],
-          ),
-          Positioned.fill(
-              child: Material(
-            color: Colors.transparent,
-            child: InkWell(onTap: () {}),
-          )),
-        ],
+                Text(
+                  "You are currently",
+                  style: Theme.of(context).textTheme.labelLarge,
+                ),
+                Text(
+                  "ranked Place 4",
+                  style: Theme.of(context).textTheme.labelLarge,
+                ),
+              ],
+            ),
+            /*Positioned.fill(
+                child: Material(
+              color: Colors.transparent,
+              child: InkWell(onTap: () {}),
+            )), */
+          ],
+        ),
       ),
     );
   }
