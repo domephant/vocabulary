@@ -6,10 +6,10 @@ class VocabSetupAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      toolbarHeight: AppBar().preferredSize.height * 1.25,
+      toolbarHeight: AppBar().preferredSize.height,
     );
   }
 
   @override
-  Size get preferredSize => AppBar().preferredSize * 1.25;
+  Size get preferredSize => AppBar().preferredSize;
 }

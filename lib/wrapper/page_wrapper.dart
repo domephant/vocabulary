@@ -25,7 +25,6 @@ class PageWrapper extends StatefulWidget {
 class _PageWrapperState extends State<PageWrapper> {
   PreferredSizeWidget appBar = const VocabAppBar(
     profile: true,
-    title: Text("Dashboard"),
   );
   bool enableFAB = true;
 
@@ -37,7 +36,6 @@ class _PageWrapperState extends State<PageWrapper> {
           case 0:
             appBar = const VocabAppBar(
               profile: true,
-              title: Text("Dashboard"),
             );
             enableFAB = true;
             break;

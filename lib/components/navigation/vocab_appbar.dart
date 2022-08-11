@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:vocabulary/services/authentication_service.dart';
 
 class VocabAppBar extends StatelessWidget implements PreferredSizeWidget {
   final bool? profile;
@@ -12,7 +14,7 @@ class VocabAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      toolbarHeight: AppBar().preferredSize.height * 1.25,
+      toolbarHeight: AppBar().preferredSize.height,
       elevation: 0,
       leading: IconButton(
         onPressed: () {
@@ -23,14 +25,24 @@ class VocabAppBar extends StatelessWidget implements PreferredSizeWidget {
       title: title,
       actions: [
         if (profile == true)
-          IconButton(
-            onPressed: () {},
-            icon: const Icon(Icons.person),
+          Padding(
+            padding: const EdgeInsets.only(right: 12.0),
+            child: CircleAvatar(
+              radius: 16,
+              child: ClipOval(
+                child: Image.network(
+                  Provider.of<AuthenticationService>(context, listen: false)
+                      .user!
+                      .photoUrl!,
+                  fit: BoxFit.contain,
+                ),
+              ),
+            ),
           )
       ],
     );
   }
 
   @override
-  Size get preferredSize => AppBar().preferredSize * 1.25;
+  Size get preferredSize => AppBar().preferredSize;
 }
