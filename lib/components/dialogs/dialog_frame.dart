@@ -10,15 +10,12 @@ class DialogFrame extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
-      scrollable: true,
-      title: Align(
+      title: Center(
         child: title,
-        alignment: Alignment.center,
       ),
-      backgroundColor: Colors.white,
-      content: SizedBox.expand(
-        child: FractionallySizedBox(widthFactor: 0.8, child: child),
-      ),
+      backgroundColor: Theme.of(context).colorScheme.background,
+      content: child,
+      contentPadding: const EdgeInsets.fromLTRB(24, 16, 24, 24),
       actions: <Widget>[
         TextButton(
             onPressed: () {
