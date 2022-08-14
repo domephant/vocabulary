@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -6,6 +7,7 @@ import 'package:vocabulary/firebase_options.dart';
 import 'package:vocabulary/providers/page_index_provider.dart';
 import 'package:vocabulary/screens/splashscreen.dart';
 import 'package:vocabulary/services/authentication_service.dart';
+import 'package:vocabulary/services/database_service.dart';
 import 'package:vocabulary/styles/color_schemes.g.dart';
 import 'package:vocabulary/styles/custom_color.g.dart';
 
@@ -22,6 +24,9 @@ Future<void> main() async {
         ),
         Provider<AuthenticationService>(
           create: (_) => AuthenticationService(FirebaseAuth.instance),
+        ),
+        Provider<DatabaseService>(
+          create: (_) => DatabaseService(FirebaseFirestore.instance),
         ),
         StreamProvider(
             create: (context) =>
