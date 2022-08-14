@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:vocabulary/components/buttons/new_vocabulary/vocab_add_meaning_button.dart';
+import 'package:vocabulary/components/display/new_vocabulary/vocab_chip.dart';
 import 'package:vocabulary/components/display/new_vocabulary/vocab_left_aligned_text.dart';
 import 'package:vocabulary/components/inputs/new_vocabulary/vocab_input_column.dart';
-import 'package:vocabulary/components/selection/vocab_language_dropdown_button.dart';
+import 'package:vocabulary/components/buttons/new_vocabulary/vocab_language_dropdown_button.dart';
+import 'package:vocabulary/components/inputs/new_vocabulary/vocab_tag_input.dart';
 import 'package:vocabulary/components/navigation/vocab_appbar.dart';
 
 class NewVocabularyScreen extends StatelessWidget {
@@ -10,13 +12,9 @@ class NewVocabularyScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final _otherLanguageController = TextEditingController();
-    final _tagController = TextEditingController();
     final _additionalInformationController = TextEditingController();
 
     final List<String> values = ['Test1', 'Test2', 'Test3'];
-
-    void addNewInputField() {}
 
     return Scaffold(
       appBar: const VocabAppBar(
@@ -47,7 +45,7 @@ class NewVocabularyScreen extends StatelessWidget {
                 style: Theme.of(context).textTheme.bodySmall,
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(vertical: 8.0),
+                padding: const EdgeInsets.fromLTRB(0, 8.0, 0, 16.0),
                 child: Container(
                   padding: const EdgeInsets.symmetric(horizontal: 16.0),
                   decoration: BoxDecoration(
@@ -62,14 +60,7 @@ class NewVocabularyScreen extends StatelessWidget {
                 text: 'Tags',
                 style: Theme.of(context).textTheme.titleLarge,
               ),
-              TextField(
-                controller: _tagController,
-                decoration: InputDecoration(
-                  focusColor: Theme.of(context).colorScheme.onSurface,
-                  fillColor: Theme.of(context).colorScheme.onSurface,
-                  border: const UnderlineInputBorder(),
-                ),
-              ),
+              VocabTagInput(),
               VocabLeftAlignedText(
                 text: 'Additional Information',
                 style: Theme.of(context).textTheme.titleLarge,

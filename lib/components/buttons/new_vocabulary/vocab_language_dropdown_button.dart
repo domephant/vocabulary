@@ -17,22 +17,23 @@ class _VocabLanguageDropdownButtonState
 
   @override
   Widget build(BuildContext context) {
-    return DropdownButton(
-      borderRadius: BorderRadius.circular(15),
-      underline: Container(),
-      value: dropdownValue,
-      isExpanded: true,
-      items: widget.items
-          .map((String value) => DropdownMenuItem(
-                child: Text(value),
-                value: value,
-              ))
-          .toList(),
-      onChanged: (String? newValue) {
-        setState(() {
-          dropdownValue = newValue!;
-        });
-      },
+    return DropdownButtonHideUnderline(
+      child: DropdownButton(
+        borderRadius: BorderRadius.circular(15),
+        value: dropdownValue,
+        isExpanded: true,
+        items: widget.items
+            .map((String value) => DropdownMenuItem(
+                  child: Text(value),
+                  value: value,
+                ))
+            .toList(),
+        onChanged: (String? newValue) {
+          setState(() {
+            dropdownValue = newValue!;
+          });
+        },
+      ),
     );
   }
 }
