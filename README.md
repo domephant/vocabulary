@@ -1,16 +1,11 @@
+# DISCLAIMER: THIS REPOSITORY IS FOR DEVELOPMENT PURPOSES ONLY. PULL REQUESTS WON'T BE MERGED AND FORKING IS NOT RECOMMENDED.
+
 # vocabulary
 
-A new Flutter project.
+A vocabulary trainer app with a new innovative tag system and the best giraffes on the market.
 
-## Getting Started
+## Workflow
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Clone the project.
+For feature checks checkout the corresponding branch of your JIRA ticket number.
+Finished Features will be merged into develop.
