@@ -23,6 +23,7 @@ class _VocabLanguageDropdownButtonState
         child: DropdownButton(
           borderRadius: BorderRadius.circular(8),
           value: dropdownValue,
+          style: Theme.of(context).textTheme.bodyLarge,
           isExpanded: true,
           items: widget.items
               .map((String value) => DropdownMenuItem(

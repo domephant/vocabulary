@@ -16,6 +16,7 @@ class _VocabTagInputState extends State<VocabTagInput> {
       padding: const EdgeInsets.only(bottom: 32.0),
       child: TextField(
         controller: _tagController,
+        style: Theme.of(context).textTheme.bodyLarge,
         decoration: InputDecoration(
           focusColor: Theme.of(context).colorScheme.onSurface,
           fillColor: Theme.of(context).colorScheme.onSurface,

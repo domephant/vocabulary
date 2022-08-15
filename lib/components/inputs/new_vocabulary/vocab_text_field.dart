@@ -16,6 +16,7 @@ class VocabTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextField(
       controller: controller,
+      style: Theme.of(context).textTheme.bodyLarge,
       decoration: InputDecoration(
           focusColor: Theme.of(context).colorScheme.onSurface,
           fillColor: Theme.of(context).colorScheme.onSurface,
