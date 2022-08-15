@@ -36,42 +36,49 @@ class _PageWrapperState extends State<PageWrapper> {
           case 0:
             appBar = const VocabAppBar(
               profile: true,
+              saveButton: false,
             );
             enableFAB = true;
             break;
           case 1:
             appBar = const VocabAppBar(
               profile: false,
+              saveButton: false,
             );
             enableFAB = true;
             break;
           case 2:
             appBar = const VocabAppBar(
               profile: true,
+              saveButton: false,
             );
             enableFAB = false;
             break;
           case 3:
             appBar = const VocabAppBar(
               profile: false,
+              saveButton: false,
             );
             enableFAB = false;
             break;
           case 4:
             appBar = const VocabAppBar(
               profile: true,
+              saveButton: false,
             );
             enableFAB = false;
             break;
           case 6:
             appBar = const VocabAppBar(
               profile: true,
+              saveButton: false,
             );
             enableFAB = false;
             break;
           case 7:
             appBar = const VocabAppBar(
               profile: false,
+              saveButton: false,
             );
             enableFAB = false;
             break;
@@ -79,12 +86,14 @@ class _PageWrapperState extends State<PageWrapper> {
             appBar = const VocabAppBar(
               profile: false,
               title: Text("Settings"),
+              saveButton: false,
             );
             enableFAB = false;
             break;
           case 9:
             appBar = const VocabAppBar(
               profile: false,
+              saveButton: false,
               title: Text("About Vocab"),
             );
             enableFAB = false;

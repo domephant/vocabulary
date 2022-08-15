@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vocabulary/screens/new_vocabulary.dart';
 
 class VocabFloatingActionButton extends StatelessWidget {
   const VocabFloatingActionButton({Key? key}) : super(key: key);
@@ -6,7 +7,10 @@ class VocabFloatingActionButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FloatingActionButton(
-      onPressed: () {},
+      onPressed: () {
+        Navigator.push(context,
+            MaterialPageRoute(builder: (_) => const NewVocabularyScreen()));
+      },
       child: const Icon(
         Icons.create,
       ),

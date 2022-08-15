@@ -4,10 +4,12 @@ import 'package:vocabulary/services/authentication_service.dart';
 
 class VocabAppBar extends StatelessWidget implements PreferredSizeWidget {
   final bool? profile;
+  final bool? saveButton;
   final Text? title;
   const VocabAppBar({
     Key? key,
     this.profile,
+    this.saveButton = false,
     this.title,
   }) : super(key: key);
 
@@ -16,12 +18,17 @@ class VocabAppBar extends StatelessWidget implements PreferredSizeWidget {
     return AppBar(
       toolbarHeight: AppBar().preferredSize.height,
       elevation: 0,
-      leading: IconButton(
-        onPressed: () {
-          Scaffold.of(context).openDrawer();
-        },
-        icon: const Icon(Icons.menu),
-      ),
+      leading: saveButton == false
+          ? IconButton(
+              onPressed: () {
+                Scaffold.of(context).openDrawer();
+              },
+              icon: const Icon(Icons.menu))
+          : IconButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              icon: const Icon(Icons.close)),
       title: title,
       actions: [
         if (profile == true)
@@ -38,7 +45,9 @@ class VocabAppBar extends StatelessWidget implements PreferredSizeWidget {
                 ),
               ),
             ),
-          )
+          ),
+        if (saveButton == true)
+          TextButton(onPressed: () {}, child: const Text("Save"))
       ],
     );
   }
