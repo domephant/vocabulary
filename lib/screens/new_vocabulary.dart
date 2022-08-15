@@ -70,6 +70,7 @@ class NewVocabularyScreen extends StatelessWidget {
                     ),
                     TextField(
                       controller: _additionalInformationController,
+                      style: Theme.of(context).textTheme.bodyLarge,
                       decoration: InputDecoration(
                         focusColor: Theme.of(context).colorScheme.onSurface,
                         fillColor: Theme.of(context).colorScheme.onSurface,
