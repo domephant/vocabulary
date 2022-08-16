@@ -48,6 +48,7 @@ dependencies:
   json_annotation: ^4.6.0
   build_runner: ^2.2.0
   json_serializable: ^6.3.1
+  flutter_launcher_icons: ^0.10.0
 
 dev_dependencies:
   flutter_test:
@@ -126,3 +127,13 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+
+flutter_icons:
+  ios: true
+  android: true
+  image_path_ios: "images/appicons/icon.png"
+  image_path_android: "images/appicons/icon.png"
+  min_sdk_android: 21
+  remove_alpha_ios: true
+  adaptive_icon_background: "#FFFBF7"
+  adaptive_icon_foreground: "images/appicons/ic_launcher_foreground.png"
