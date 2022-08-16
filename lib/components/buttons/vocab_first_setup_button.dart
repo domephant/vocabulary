@@ -13,6 +13,12 @@ class VocabFirstSetupButton extends StatelessWidget {
       : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(onPressed: onPressed, child: title, style: style);
+    return ElevatedButton(
+        onPressed: onPressed,
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: title,
+        ),
+        style: style);
   }
 }
