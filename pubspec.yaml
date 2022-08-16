@@ -135,5 +135,5 @@ flutter_icons:
   image_path_android: "images/appicons/icon.png"
   min_sdk_android: 21
   remove_alpha_ios: true
-  adaptive_icon_background: "images/appicons/adaptive_icon_background.png"
-  adaptive_icon_foreground: "images/appicons/icon.png"
+  adaptive_icon_background: "#FFFBF7"
+  adaptive_icon_foreground: "images/appicons/ic_launcher_foreground.png"
