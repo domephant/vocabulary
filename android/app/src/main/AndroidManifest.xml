@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="de.vocabulary.vocabulary">
    <application
-        android:label="vocabulary"
+        android:label="Vocabulary"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
