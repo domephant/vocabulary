@@ -8,8 +8,39 @@ import 'package:vocabulary/components/navigation/vocab_setup_appbar.dart';
 import 'package:vocabulary/screens/first_setup/language_selection.dart';
 import 'package:vocabulary/services/authentication_service.dart';
 
-class WelcomeScreen extends StatelessWidget {
+class WelcomeScreen extends StatefulWidget {
   const WelcomeScreen({Key? key}) : super(key: key);
+
+  @override
+  State<WelcomeScreen> createState() => _WelcomeScreenState();
+}
+
+class _WelcomeScreenState extends State<WelcomeScreen>
+    with TickerProviderStateMixin {
+  late AnimationController _lottieAnimationController;
+
+  @override
+  void initState() {
+    _lottieAnimationController = AnimationController(vsync: this);
+  }
+
+  void playAnimation() {
+    _lottieAnimationController.forward().then(
+          (value) => Navigator.push(
+            context,
+            PageTransition(
+                child: const LanguageSelectionScreen(),
+                type: PageTransitionType.rightToLeftWithFade,
+                duration: const Duration(milliseconds: 200)),
+          ),
+        );
+  }
+
+  @override
+  void dispose() {
+    _lottieAnimationController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -42,8 +73,11 @@ class WelcomeScreen extends StatelessWidget {
                   'images/lotties/setup/lottie_setupscreen_01.json',
                   fit: BoxFit.fitWidth,
                   width: constraints.maxWidth,
-                  repeat: false,
+                  controller: _lottieAnimationController,
                   frameRate: FrameRate.max,
+                  onLoaded: (composition) {
+                    _lottieAnimationController.duration = composition.duration;
+                  },
                 ),
               ),
             ),
@@ -71,15 +105,7 @@ class WelcomeScreen extends StatelessWidget {
                                         listen: false)
                                     .signInWithGoogle() ==
                                 true) {
-                              Navigator.push(
-                                context,
-                                PageTransition(
-                                    child: const LanguageSelectionScreen(),
-                                    type:
-                                        PageTransitionType.rightToLeftWithFade,
-                                    duration:
-                                        const Duration(milliseconds: 200)),
-                              );
+                              playAnimation();
                             }
                           },
                         ),
