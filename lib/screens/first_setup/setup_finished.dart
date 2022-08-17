@@ -50,8 +50,10 @@ class VocabSetupFinishedScreen extends StatelessWidget {
                   ),
                   SizedBox(
                     width: MediaQuery.of(context).size.width * 0.8,
-                    child: const Text(
-                        "Thank you for using Vocabulary. Now that everything is set up, you are ready to start your language journey!"),
+                    child: Text(
+                      "Thank you for using Vocabulary. Now that everything is set up, you are ready to start your language journey!",
+                      style: Theme.of(context).textTheme.bodyLarge,
+                    ),
                   ),
                 ],
               ),

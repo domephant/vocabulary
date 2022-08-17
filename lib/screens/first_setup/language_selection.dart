@@ -30,7 +30,7 @@ class LanguageSelectionScreen extends StatelessWidget {
                   height: 20,
                 ),
                 Text("Don't worry. You can change it later.",
-                    style: Theme.of(context).textTheme.bodyMedium),
+                    style: Theme.of(context).textTheme.bodyLarge),
               ],
             ),
             SizedBox(
