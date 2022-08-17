@@ -20,7 +20,7 @@ class _VocabCheckBoxState extends State<VocabCheckBox> {
         value: ticked,
         title: Text(
           widget.title,
-          style: TextStyle(
+          style: Theme.of(context).textTheme.labelLarge!.copyWith(
               color: ticked
                   ? Theme.of(context).colorScheme.tertiary
                   : Theme.of(context).colorScheme.onBackground),

@@ -11,71 +11,109 @@ class LanguageSelectionScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: const VocabSetupAppBar(),
-      body: Align(
-        child: Column(
-          mainAxisSize: MainAxisSize.max,
-          crossAxisAlignment: CrossAxisAlignment.center,
+    return LayoutBuilder(
+      builder: (context, constraints) => Scaffold(
+        appBar: const VocabSetupAppBar(),
+        body: Stack(
           children: [
-            Column(children: [
-              Text(
-                "Select your languages",
-                style: Theme.of(context)
-                    .textTheme
-                    .headlineMedium!
-                    .copyWith(color: Theme.of(context).colorScheme.tertiary),
+            Column(
+              children: [
+                Align(
+                  alignment: Alignment.topCenter,
+                  child: Text(
+                    "Select your languages",
+                    style: Theme.of(context).textTheme.headlineMedium!.copyWith(
+                        color: Theme.of(context).colorScheme.tertiary),
+                  ),
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                Text("Don't worry. You can change it later.",
+                    style: Theme.of(context).textTheme.bodyLarge),
+              ],
+            ),
+            SizedBox(
+              width: constraints.maxWidth,
+              height: constraints.maxHeight * 0.35,
+              child: FittedBox(
+                fit: BoxFit.fitWidth,
+                alignment: Alignment.bottomCenter,
+                child: Lottie.asset(
+                  'images/lotties/setup/lottie_setupscreen_02.json',
+                  fit: BoxFit.fitWidth,
+                  width: constraints.maxWidth,
+                  repeat: false,
+                  frameRate: FrameRate.max,
+                ),
               ),
-              Text("Don't worry. You can change it later.",
-                  style: Theme.of(context).textTheme.bodyMedium),
-            ]),
-            Lottie.asset(
-              'images/lotties/setup/lottie_setupscreen_02.json',
-              fit: BoxFit.fitWidth,
-              repeat: false,
-              alignment: Alignment.centerRight,
-              height: MediaQuery.of(context).size.height * 0.25,
-              frameRate: FrameRate.max,
             ),
             Column(
-              children: const [
-                VocabCheckBox(
-                  title: "German",
+              children: [
+                SizedBox(
+                  width: constraints.maxWidth,
+                  height: constraints.maxHeight * 0.4,
                 ),
-                VocabCheckBox(
-                  title: "English",
-                ),
-                VocabCheckBox(
-                  title: "French",
-                ),
-                VocabCheckBox(
-                  title: "Japanese",
-                ),
-                VocabCheckBox(
-                  title: "Korean",
-                ),
-                VocabCheckBox(
-                  title: "Giraffe",
+                Column(
+                  children: const [
+                    VocabCheckBox(
+                      title: "German",
+                    ),
+                    VocabCheckBox(
+                      title: "English",
+                    ),
+                    VocabCheckBox(
+                      title: "French",
+                    ),
+                    VocabCheckBox(
+                      title: "Japanese",
+                    ),
+                    VocabCheckBox(
+                      title: "Korean",
+                    ),
+                    VocabCheckBox(
+                      title: "Giraffe",
+                    ),
+                  ],
                 ),
               ],
             ),
-            VocabFirstSetupButton(
-              title: const Text("Next"),
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  PageTransition(
-                      child: const VocabSetupFinishedScreen(),
-                      type: PageTransitionType.rightToLeftWithFade,
-                      duration: const Duration(milliseconds: 250)),
-                );
-              },
-              style: ButtonStyle(
-                backgroundColor: MaterialStateProperty.all(
-                    Theme.of(context).colorScheme.tertiary),
-                foregroundColor: MaterialStateProperty.all(
-                    Theme.of(context).colorScheme.onPrimary),
-              ),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.end,
+              crossAxisAlignment: CrossAxisAlignment.end,
+              mainAxisSize: MainAxisSize.max,
+              children: [
+                Align(
+                  alignment: FractionalOffset.centerRight,
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(
+                        vertical: constraints.maxHeight * 0.02,
+                        horizontal: constraints.maxWidth * 0.05),
+                    child: VocabFirstSetupButton(
+                      title: Text(
+                        "Next",
+                        style: Theme.of(context).textTheme.labelLarge!.copyWith(
+                            color: Theme.of(context).colorScheme.onPrimary),
+                      ),
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          PageTransition(
+                              child: const VocabSetupFinishedScreen(),
+                              type: PageTransitionType.rightToLeftWithFade,
+                              duration: const Duration(milliseconds: 250)),
+                        );
+                      },
+                      style: ButtonStyle(
+                        backgroundColor: MaterialStateProperty.all(
+                            Theme.of(context).colorScheme.tertiary),
+                        foregroundColor: MaterialStateProperty.all(
+                            Theme.of(context).colorScheme.onPrimary),
+                      ),
+                    ),
+                  ),
+                )
+              ],
             )
           ],
         ),
