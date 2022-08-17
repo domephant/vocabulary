@@ -70,7 +70,14 @@ class VocabSetupFinishedScreen extends StatelessWidget {
                           vertical: constraints.maxHeight * 0.02,
                           horizontal: constraints.maxWidth * 0.05),
                       child: VocabFirstSetupButton(
-                        title: const Text("Let's Go!"),
+                        title: Text("Let's Go!",
+                            style: Theme.of(context)
+                                .textTheme
+                                .labelLarge!
+                                .copyWith(
+                                    color: Theme.of(context)
+                                        .colorScheme
+                                        .onPrimary)),
                         onPressed: () {
                           Navigator.of(context).pushAndRemoveUntil(
                               PageTransition(
