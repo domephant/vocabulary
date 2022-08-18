@@ -10,42 +10,53 @@ class VocabInputColumn extends StatefulWidget {
 }
 
 class _VocabInputColumnState extends State<VocabInputColumn> {
+  late final List<VocabTextField> yourLanguageInputs;
+
   void removeTextFieldWithIndex(int index) {
-    setState(() {
-      yourLanguageInputs.removeAt(index);
-    });
+    setState(
+      () {
+        yourLanguageInputs.removeAt(index);
+      },
+    );
   }
 
   void addTextFieldWithIndex() {
-    print("test");
-    setState(() {
-      yourLanguageInputs.add(
-        VocabTextField(
-          controller: TextEditingController(),
-          index: yourLanguageInputs.length,
-          onIconPressed: () {},
-        ),
-      );
-    });
+    setState(
+      () {
+        yourLanguageInputs.add(
+          VocabTextField(
+            controller: TextEditingController(),
+            index: yourLanguageInputs.length,
+            onIconPressed: () =>
+                removeTextFieldWithIndex(yourLanguageInputs.length - 1),
+            onSubmit: () => addTextFieldWithIndex(),
+            focus: FocusNode(),
+          ),
+        );
+      },
+    );
+    yourLanguageInputs[yourLanguageInputs.length - 1].focus.requestFocus();
   }
 
-  final List<VocabTextField> yourLanguageInputs = [
-    VocabTextField(
-      controller: TextEditingController(),
-      index: 0,
-      onIconPressed: () {},
-    )
-  ];
+  @override
+  void initState() {
+    yourLanguageInputs = [
+      VocabTextField(
+        controller: TextEditingController(),
+        index: 0,
+        onIconPressed: () => removeTextFieldWithIndex(0),
+        onSubmit: () => addTextFieldWithIndex(),
+        focus: FocusNode(),
+      )
+    ];
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        for (VocabTextField field in yourLanguageInputs)
-          VocabTextField(
-              controller: field.controller,
-              index: field.index,
-              onIconPressed: () => removeTextFieldWithIndex(field.index)),
+        for (VocabTextField field in yourLanguageInputs) field,
         Padding(
           padding: const EdgeInsets.fromLTRB(0.0, 8.0, 0.0, 16.0),
           child:

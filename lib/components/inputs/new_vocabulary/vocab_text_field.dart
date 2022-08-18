@@ -4,12 +4,16 @@ class VocabTextField extends StatelessWidget {
   final TextEditingController controller;
   final int index;
   final VoidCallback? onIconPressed;
+  final VoidCallback? onSubmit;
+  final FocusNode focus;
 
   const VocabTextField(
       {Key? key,
       required this.controller,
       required this.index,
-      this.onIconPressed})
+      required this.focus,
+      this.onIconPressed,
+      this.onSubmit})
       : super(key: key);
 
   @override
@@ -17,6 +21,8 @@ class VocabTextField extends StatelessWidget {
     return TextField(
       controller: controller,
       style: Theme.of(context).textTheme.bodyLarge,
+      onSubmitted: onSubmit != null ? (value) => onSubmit!() : null,
+      focusNode: focus,
       decoration: InputDecoration(
           focusColor: Theme.of(context).colorScheme.onSurface,
           fillColor: Theme.of(context).colorScheme.onSurface,
