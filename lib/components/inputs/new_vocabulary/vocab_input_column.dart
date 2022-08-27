@@ -10,12 +10,13 @@ class VocabInputColumn extends StatefulWidget {
 }
 
 class _VocabInputColumnState extends State<VocabInputColumn> {
+  int index = 1;
   late final List<VocabTextField> yourLanguageInputs;
 
-  void removeTextFieldWithIndex(int index) {
+  void removeTextFieldWithIndex(TextEditingController con) {
     setState(
       () {
-        yourLanguageInputs.removeAt(index);
+        yourLanguageInputs.removeWhere((element) => element.controller == con);
       },
     );
   }
@@ -23,28 +24,28 @@ class _VocabInputColumnState extends State<VocabInputColumn> {
   void addTextFieldWithIndex() {
     setState(
       () {
+        TextEditingController controller = TextEditingController();
         yourLanguageInputs.add(
           VocabTextField(
-            controller: TextEditingController(),
-            index: yourLanguageInputs.length,
-            onIconPressed: () =>
-                removeTextFieldWithIndex(yourLanguageInputs.length - 1),
+            controller: controller,
+            onIconPressed: () => removeTextFieldWithIndex(controller),
             onSubmit: () => addTextFieldWithIndex(),
             focus: FocusNode(),
           ),
         );
       },
     );
+    index++;
     yourLanguageInputs[yourLanguageInputs.length - 1].focus.requestFocus();
   }
 
   @override
   void initState() {
+    TextEditingController controller = TextEditingController();
     yourLanguageInputs = [
       VocabTextField(
-        controller: TextEditingController(),
-        index: 0,
-        onIconPressed: () => removeTextFieldWithIndex(0),
+        controller: controller,
+        onIconPressed: () => removeTextFieldWithIndex(controller),
         onSubmit: () => addTextFieldWithIndex(),
         focus: FocusNode(),
       )
