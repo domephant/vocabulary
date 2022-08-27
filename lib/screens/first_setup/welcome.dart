@@ -21,6 +21,7 @@ class _WelcomeScreenState extends State<WelcomeScreen>
 
   @override
   void initState() {
+    super.initState();
     _lottieAnimationController = AnimationController(vsync: this);
   }
 
