@@ -1,4 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
 class AuthenticationService {
@@ -21,11 +22,15 @@ class AuthenticationService {
         idToken: googleAuth.idToken,
       );
 
-      await FirebaseAuth.instance.signInWithCredential(credential);
+      await _firebaseAuth.signInWithCredential(credential);
       return true;
     } on FirebaseAuthException catch (e) {
-      print(e.message);
+      debugPrint(e.toString());
       return false;
     }
+  }
+
+  String getUid() {
+    return _firebaseAuth.currentUser!.uid;
   }
 }
