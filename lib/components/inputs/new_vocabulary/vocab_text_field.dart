@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 class VocabTextField extends StatelessWidget {
   final TextEditingController controller;
-  final int index;
   final VoidCallback? onIconPressed;
   final VoidCallback? onSubmit;
   final FocusNode focus;
@@ -10,7 +9,6 @@ class VocabTextField extends StatelessWidget {
   const VocabTextField(
       {Key? key,
       required this.controller,
-      required this.index,
       required this.focus,
       this.onIconPressed,
       this.onSubmit})
