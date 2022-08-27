@@ -12,8 +12,6 @@ class NewVocabularyScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final _additionalInformationController = TextEditingController();
 
-    final List<String> values = ['Test1', 'Test2', 'Test3'];
-
     return Scaffold(
       resizeToAvoidBottomInset: true,
       appBar: const VocabAppBar(
@@ -56,14 +54,14 @@ class NewVocabularyScreen extends StatelessWidget {
                           border: Border.all(
                               color: Theme.of(context).colorScheme.outline),
                         ),
-                        child: VocabLanguageDropdownButton(items: values),
+                        child: const VocabLanguageDropdownButton(),
                       ),
                     ),
                     VocabLeftAlignedText(
                       text: 'Tags',
                       style: Theme.of(context).textTheme.titleLarge,
                     ),
-                    VocabTagInput(),
+                    const VocabTagInput(),
                     VocabLeftAlignedText(
                       text: 'Additional Information',
                       style: Theme.of(context).textTheme.titleLarge,
