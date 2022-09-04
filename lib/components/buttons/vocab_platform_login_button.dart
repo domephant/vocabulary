@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class VocabPlatformButton extends StatelessWidget {
-  final Text title;
+  final String title;
   final Widget icon;
   final VoidCallback onPressed;
   const VocabPlatformButton(
@@ -16,8 +16,12 @@ class VocabPlatformButton extends StatelessWidget {
     return OutlinedButton(
       onPressed: onPressed,
       child: ListTile(
+        dense: true,
         leading: icon,
-        title: title,
+        title: Text(
+          title,
+          style: Theme.of(context).textTheme.labelLarge,
+        ),
       ),
     );
   }
