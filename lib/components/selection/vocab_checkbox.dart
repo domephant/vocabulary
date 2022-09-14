@@ -16,22 +16,23 @@ class _VocabCheckBoxState extends State<VocabCheckBox> {
   @override
   Widget build(BuildContext context) {
     return CheckboxListTile(
-        controlAffinity: ListTileControlAffinity.leading,
-        value: ticked,
-        title: Text(
-          widget.title,
-          style: Theme.of(context).textTheme.labelLarge!.copyWith(
-              color: ticked
-                  ? Theme.of(context).colorScheme.tertiary
-                  : Theme.of(context).colorScheme.onBackground),
-        ),
-        activeColor: Theme.of(context).colorScheme.tertiary,
-        checkboxShape:
-            RoundedRectangleBorder(borderRadius: BorderRadius.circular(2)),
-        onChanged: (value) {
-          setState(() {
-            ticked = !ticked;
-          });
+      controlAffinity: ListTileControlAffinity.leading,
+      value: ticked,
+      title: Text(
+        widget.title,
+        style: Theme.of(context).textTheme.labelLarge!.copyWith(
+            color: ticked
+                ? Theme.of(context).colorScheme.tertiary
+                : Theme.of(context).colorScheme.onBackground),
+      ),
+      activeColor: Theme.of(context).colorScheme.tertiary,
+      checkboxShape:
+          RoundedRectangleBorder(borderRadius: BorderRadius.circular(2)),
+      onChanged: (value) {
+        setState(() {
+          ticked = !ticked;
         });
+      },
+    );
   }
 }

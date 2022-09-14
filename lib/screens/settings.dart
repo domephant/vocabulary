@@ -30,7 +30,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
     Languages.english,
     Languages.giraffe,
     Languages.french,
-    Languages.chinese_simplified,
+    Languages.chineseSimplified,
     Languages.japanese,
     Languages.korean,
     Languages.danish,

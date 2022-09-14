@@ -1,9 +1,11 @@
+import 'package:enum_to_string/enum_to_string.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:vocabulary/components/buttons/vocab_first_setup_button.dart';
 import 'package:vocabulary/components/navigation/vocab_setup_appbar.dart';
 import 'package:vocabulary/components/selection/vocab_checkbox.dart';
+import 'package:vocabulary/models/enums/languages.dart';
 import 'package:vocabulary/screens/first_setup/setup_finished.dart';
 
 class LanguageSelectionScreen extends StatelessWidget {
@@ -54,27 +56,22 @@ class LanguageSelectionScreen extends StatelessWidget {
                   width: constraints.maxWidth,
                   height: constraints.maxHeight * 0.4,
                 ),
-                Column(
-                  children: const [
-                    VocabCheckBox(
-                      title: "German",
+                SizedBox(
+                  width: constraints.maxWidth,
+                  height: constraints.maxHeight * 0.4,
+                  child: Scrollbar(
+                    child: ListView.builder(
+                      shrinkWrap: true,
+                      itemCount: Languages.values.length,
+                      itemBuilder: (context, index) {
+                        return VocabCheckBox(
+                          title: EnumToString.convertToString(
+                              Languages.values.elementAt(index),
+                              camelCase: true),
+                        );
+                      },
                     ),
-                    VocabCheckBox(
-                      title: "English",
-                    ),
-                    VocabCheckBox(
-                      title: "French",
-                    ),
-                    VocabCheckBox(
-                      title: "Japanese",
-                    ),
-                    VocabCheckBox(
-                      title: "Korean",
-                    ),
-                    VocabCheckBox(
-                      title: "Giraffe",
-                    ),
-                  ],
+                  ),
                 ),
               ],
             ),
