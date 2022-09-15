@@ -59,19 +59,7 @@ class LanguageSelectionScreen extends StatelessWidget {
                 SizedBox(
                   width: constraints.maxWidth,
                   height: constraints.maxHeight * 0.4,
-                  child: Scrollbar(
-                    child: ListView.builder(
-                      shrinkWrap: true,
-                      itemCount: Languages.values.length,
-                      itemBuilder: (context, index) {
-                        return VocabCheckBox(
-                          title: EnumToString.convertToString(
-                              Languages.values.elementAt(index),
-                              camelCase: true),
-                        );
-                      },
-                    ),
-                  ),
+                  child: const VocabLanguageListView(),
                 ),
               ],
             ),
@@ -114,6 +102,48 @@ class LanguageSelectionScreen extends StatelessWidget {
             )
           ],
         ),
+      ),
+    );
+  }
+}
+
+class VocabLanguageListView extends StatefulWidget {
+  const VocabLanguageListView({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  State<VocabLanguageListView> createState() => _VocabLanguageListViewState();
+}
+
+class _VocabLanguageListViewState extends State<VocabLanguageListView> {
+  List<Languages> selectedValues = [];
+
+  void toggleValue(Languages lang) {
+    setState(() {
+      if (!selectedValues.contains(lang)) {
+        selectedValues.add(lang);
+      } else {
+        selectedValues.remove(lang);
+      }
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scrollbar(
+      child: ListView.builder(
+        shrinkWrap: true,
+        itemCount: Languages.values.length,
+        itemBuilder: (context, index) {
+          return VocabCheckBox(
+            title: EnumToString.convertToString(
+                Languages.values.elementAt(index),
+                camelCase: true),
+            update: () => toggleValue(Languages.values.elementAt(index)),
+            ticked: selectedValues.contains(Languages.values.elementAt(index)),
+          );
+        },
       ),
     );
   }
