@@ -97,7 +97,7 @@ class _WelcomeScreenState extends State<WelcomeScreen>
                             vertical: constraints.maxHeight * 0.025,
                             horizontal: 0.0),
                         child: VocabPlatformButton(
-                          title: const Text("Sign in with Google"),
+                          title: "Sign in with Google",
                           icon: const FaIcon(FontAwesomeIcons.google),
                           onPressed: () async {
                             if (await Provider.of<AuthenticationService>(
@@ -111,7 +111,7 @@ class _WelcomeScreenState extends State<WelcomeScreen>
                         ),
                       ),
                       VocabPlatformButton(
-                        title: const Text("Sign in with Apple"),
+                        title: "Sign in with Apple",
                         icon: const FaIcon(FontAwesomeIcons.apple),
                         onPressed: () {},
                       ),

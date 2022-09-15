@@ -49,6 +49,7 @@ dependencies:
   build_runner: ^2.2.0
   json_serializable: ^6.3.1
   flutter_launcher_icons: ^0.10.0
+  enum_to_string: ^2.0.1
 
 dev_dependencies:
   flutter_test:

@@ -1,9 +1,11 @@
+import 'package:enum_to_string/enum_to_string.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:vocabulary/components/buttons/vocab_first_setup_button.dart';
 import 'package:vocabulary/components/navigation/vocab_setup_appbar.dart';
 import 'package:vocabulary/components/selection/vocab_checkbox.dart';
+import 'package:vocabulary/models/enums/languages.dart';
 import 'package:vocabulary/screens/first_setup/setup_finished.dart';
 
 class LanguageSelectionScreen extends StatelessWidget {
@@ -54,27 +56,10 @@ class LanguageSelectionScreen extends StatelessWidget {
                   width: constraints.maxWidth,
                   height: constraints.maxHeight * 0.4,
                 ),
-                Column(
-                  children: const [
-                    VocabCheckBox(
-                      title: "German",
-                    ),
-                    VocabCheckBox(
-                      title: "English",
-                    ),
-                    VocabCheckBox(
-                      title: "French",
-                    ),
-                    VocabCheckBox(
-                      title: "Japanese",
-                    ),
-                    VocabCheckBox(
-                      title: "Korean",
-                    ),
-                    VocabCheckBox(
-                      title: "Giraffe",
-                    ),
-                  ],
+                SizedBox(
+                  width: constraints.maxWidth,
+                  height: constraints.maxHeight * 0.4,
+                  child: const VocabLanguageListView(),
                 ),
               ],
             ),
@@ -117,6 +102,48 @@ class LanguageSelectionScreen extends StatelessWidget {
             )
           ],
         ),
+      ),
+    );
+  }
+}
+
+class VocabLanguageListView extends StatefulWidget {
+  const VocabLanguageListView({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  State<VocabLanguageListView> createState() => _VocabLanguageListViewState();
+}
+
+class _VocabLanguageListViewState extends State<VocabLanguageListView> {
+  List<Languages> selectedValues = [];
+
+  void toggleValue(Languages lang) {
+    setState(() {
+      if (!selectedValues.contains(lang)) {
+        selectedValues.add(lang);
+      } else {
+        selectedValues.remove(lang);
+      }
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scrollbar(
+      child: ListView.builder(
+        shrinkWrap: true,
+        itemCount: Languages.values.length,
+        itemBuilder: (context, index) {
+          return VocabCheckBox(
+            title: EnumToString.convertToString(
+                Languages.values.elementAt(index),
+                camelCase: true),
+            update: () => toggleValue(Languages.values.elementAt(index)),
+            ticked: selectedValues.contains(Languages.values.elementAt(index)),
+          );
+        },
       ),
     );
   }
